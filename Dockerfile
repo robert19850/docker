@@ -11,7 +11,7 @@ RUN   apk --no-cache upgrade && \
       sed -i "s/kDefaultDonateLevel = 5/kDefaultDonateLevel = 0/g" src/donate.h && \ 
       sed -i "s/kMinimumDonateLevel = 1/kMinimumDonateLevel = 0/g" src/donate.h && \ 
       mkdir build && \
-      cmake -DWITH_AEON=OFF -DWITH_HTTPD=OFF -DCMAKE_BUILD_TYPE=Release . && \
+      cmake -DWITH_AEON=OFF -DWITH_HTTPD=OFF -DCMAKE_BUILD_TYPE=Release -DWITH_TLS=OFF . && \
       make && \
       apk del \
         build-base \
